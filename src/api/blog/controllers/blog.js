@@ -12,8 +12,18 @@ module.exports = createCoreController("api::blog.blog", ({ strapi }) => ({
     // Calling the default core action
     const { data, meta } = await super.find(ctx);
 
-    strapi.db.query("api::blog.blog");
+    const query = strapi.db.query("api::blog.blog");
 
+    await Promise.all(
+      data.map(async (item, index) => {
+        await query.findOne({
+          where: {
+            id: item.id,
+          },
+        });
+
+      })
+    );
     return { data, meta };
   },
   async findOne(ctx) {
