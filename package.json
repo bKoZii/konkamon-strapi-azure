@@ -1,0 +1,39 @@
+{
+  "name": "konkamon-strapi-azure",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi CMS For my Blog Website",
+  "license": "MIT",
+  "author": {
+    "name": "Konkamon Sion"
+  },
+  "scripts": {
+    "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "node node_modules/@strapi/strapi/bin/strapi.js start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.25.8",
+    "@strapi/plugin-i18n": "4.25.8",
+    "@strapi/plugin-users-permissions": "4.25.8",
+    "@strapi/strapi": "4.25.8",
+    "mysql": "2.18.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "strapi-plugin-wysiwyg-react-md-editor": "^4.5.3",
+    "strapi-provider-upload-azure-storage": "^3.4.0",
+    "styled-components": "5.3.3"
+  },
+  "devDependencies": {},
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": "^10.8.0"
+  },
+  "strapi": {
+    "uuid": "ec83a94c-a33a-4234-abdb-d3e6f01de5e4"
+  }
+}
