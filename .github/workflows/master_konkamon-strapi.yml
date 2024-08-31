@@ -24,16 +24,19 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
+          npm run build
           npm run test --if-present
       
-      - name: 'Tar files'
-        run: tar -cf node-app.tar .
+      - name: Create Archive of application code
+        run: |
+              mkdir -p zip
+              zip  -r zip/app.zip . -x@.zipignore
         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: node-app.tar
+          name: strapi-app
+          path: zip/app.zip
 
   deploy:
     runs-on: ubuntu-latest
