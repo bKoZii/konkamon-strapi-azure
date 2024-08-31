@@ -51,10 +51,10 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: node-app
+          name: strapi-app
 
-      - name: 'Untar files'
-        run: 'tar -xf node-app.tar'
+      - name: Unzip artifact for deployment
+        run: unzip zip/app.zip
       
       - name: Login to Azure
         uses: azure/login@v2
