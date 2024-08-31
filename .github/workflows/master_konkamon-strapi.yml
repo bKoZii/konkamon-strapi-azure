@@ -30,13 +30,13 @@ jobs:
       - name: Create Archive of application code
         run: |
               mkdir -p zip
-              zip  -r zip/app.zip . -x@.zipignore
+              zip  -r app.zip . -x@.zipignore
         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: strapi-app
-          path: zip/app.zip
+          path: app.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
           name: strapi-app
 
       - name: Unzip artifact for deployment
-        run: unzip zip/app.zip
+        run: unzip app.zip
       
       - name: Login to Azure
         uses: azure/login@v2
