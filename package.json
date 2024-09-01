@@ -8,10 +8,10 @@
     "name": "Konkamon Sion"
   },
   "scripts": {
-    "build": "strapi build",
+    "build": "node node_modules/@strapi/strapi/bin/strapi.js build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
-    "start": "node server.js NODE_ENV=production",
+    "start": "node node_modules/@strapi/strapi/bin/strapi.js start",
     "strapi": "strapi"
   },
   "dependencies": {
