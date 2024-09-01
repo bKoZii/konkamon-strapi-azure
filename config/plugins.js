@@ -17,4 +17,20 @@ module.exports = ({ env }) => ({
       delete: {},
     },
   },
+  "rest-cache": {
+    config: {
+      provider: {
+        name: "memory",
+        getTimeout: 500,
+        options: {
+          max: 32767,
+          updateAgeOnGet: false,
+        },
+      },
+      strategy: {
+        maxAge: 86400000,
+        contentTypes: ["api::blog.blog", "api::category.category"],
+      },
+    },
+  },
 });
